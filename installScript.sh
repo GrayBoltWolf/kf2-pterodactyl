@@ -3,7 +3,7 @@
 #
 # Server Files: /mnt/server
 
-SRCDS_APPID=740250
+SRCDS_APPID=232130
 
 if [ "${STEAM_USER}" == "" ]; then
     echo -e "steam user is not set.\n"
@@ -21,14 +21,10 @@ cd /mnt/server/steamcmd
 chown -R root:root /mnt
 export HOME=/mnt/server
 
-./steamcmd.sh +login ${STEAM_USER} ${STEAM_PASS} ${STEAM_AUTH} +app_license_request ${STEAMAPPID} +app_update ${SRCDS_APPID} -beta ${STEAMBETA} -betapassword ${STEAMBETAPASSWORD} validate +quit
+./steamcmd.sh +login anonymous +app_update ${SRCDS_APPID} validate +quit
 
 cd ~/
 
-export STEAMAPPDIR=Steam/steamapps/common/NeosVR
-
-mkdir ${STEAMAPPDIR}/Config
-
-curl -sSL -o ${STEAMAPPDIR}/Config/Config.json "https://raw.githubusercontent.com/NeosVR-Community-Projects/neosvr-pterodactyl/master/Config.json"
+export STEAMAPPDIR=Steam/steamapps/common/kf2server
 
 echo "done"
