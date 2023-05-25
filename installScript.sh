@@ -5,13 +5,6 @@
 
 SRCDS_APPID=232130
 
-if [ "${STEAM_USER}" == "" ]; then
-    echo -e "steam user is not set.\n"
-    exit 1
-else
-    echo -e "user set to ${STEAM_USER}"
-fi
-
 cd /tmp
 mkdir -p /mnt/server/steamcmd
 curl -sSL -o steamcmd.tar.gz https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
