@@ -1,23 +1,30 @@
 {
-    "Steam/steamapps/common/NeosVR/Config/Config.json": {
-        "parser": "json",
+    "Steam/steamapps/common/kf2server/Engine/Config/KFWeb.ini": {
+        "parser": "ini",
         "find": {
-            "loginCredential": "{{server.build.env.HEADLESS_EMAIL}}",
-            "loginPassword": "{{server.build.env.HEADLESS_PASS}}",
-            "maxConcurrentAssetTransfers": "{{server.build.env.CONCURRENT_TRANSFERS}}",
-            "startWorlds[0].sessionName": "{{server.build.env.SESSION_NAME}}",
-            "startWorlds[0].customSessionId": "{{server.build.env.SESSION_ID}}",
-            "startWorlds[0].description": "{{server.build.env.SESSION_DESCRIPTION}}",
-            "startWorlds[0].loadWorldURL": "{{server.build.env.WORLD_URL}}",
-            "startWorlds[0].accessLevel": "{{server.build.env.ACCESS_LEVEL}}",
-            "startWorlds[0].idleRestartInterval": "{{server.build.env.IDLE_RESTART_INTERVAL}}",
-            "startWorlds[0].roleCloudVariable": "{{server.build.env.ROLE_CLOUD_VARIABLE}}",
-            "startWorlds[0].allowUserCloudVariable": "{{server.build.env.ALLOW_USER_CLOUD_VARIABLE}}",
-            "startWorlds[0].hideFromPublicListing": "{{server.build.env.HIDDEN}}",
-            "startWorlds[0].maxUsers": "{{server.build.env.MAXUSERS}}",
-            "startWorlds[0].awayKickMinutes": "{{server.build.env.AFKTIMEOUT}}",
-            "startWorlds[0].requiredUserJoinCloudVariable": "{{server.build.env.REQUIRED_USER_JOIN_CLOUD_VARIABLE}}",
-            "startWorlds[0].requiredUserJoinCloudVariableDenyMessage": "{{server.build.env.REQUIRED_USER_DENY_MESSAGE}}"
+            "IpDrv.WebServer.bEnabled": "true",
+            "IpDrv.WebServer.bListenPort": "{{server.build.env.WEB_PORT}}"
+        }
+    },
+    "Steam/steamapps/common/kf2server/KFGame/Config/KFWebAdmin.ini": {
+        "parser": "ini",
+        "find": {
+            "WebAdmin.WebAdmin.bHttpAuth": "true"
+        }
+    },
+    "Steam/steamapps/common/kf2server/KFGame/Config/LinuxServer-KFGame.ini": {
+        "parser": "ini",
+        "find": {
+            "Engine.AccessControl.AdminPassword": "{{server.build.env.WEB_PASS}}",
+            "Engine.AccessControl.GamePassword": "{{server.build.env.GAME_PASS}}",
+            "Engine.GameReplicationInfo.ServerName": "{{server.build.env.SERVER_NAME}}",
+            "KFGame.KFGameInfo.BannerLink": "{{server.build.env.SERVER_BANNER}}",
+            "KFGame.KFGameInfo.ServerMOTD": "{{server.build.env.SERVER_MOTD}}",
+            "KFGame.KFGameInfo.WebsiteLink": "{{server.build.env.SERVER_LINK}}",
+            "KFGame.KFGameInfo.ClanMotto": "{{server.build.env.SERVER_MOTTO}}",
+            "KFGame.KFGameInfo.MaxPlayers": "{{server.build.env.PLAYER_COUNT}}",
+            "Engine.GameInfo.MaxPlayers": "{{server.build.env.PLAYER_COUNT}}",
+            "KFGameContent.KFGameInfo_Survival.MaxPlayers": "{{server.build.env.PLAYER_COUNT}}"
         }
     }
 }
